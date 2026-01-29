@@ -1,0 +1,19 @@
+<%- include('partials/head', { title: 'Dashboard' }) %>
+<%- include('partials/sidebar') %>
+<%- include('partials/topbar', { title: 'Dashboard' }) %>
+
+<div class="ml-64 mt-16 p-10">
+
+  <div class="grid grid-cols-3 gap-6 mb-10">
+    <div class="bg-card p-6 rounded-xl">Submissions<br><span class="text-3xl">24</span></div>
+    <div class="bg-card p-6 rounded-xl">Pending<br><span class="text-3xl">8</span></div>
+    <div class="bg-card p-6 rounded-xl">Approved<br><span class="text-3xl">16</span></div>
+  </div>
+
+  <div class="bg-card p-6 rounded-xl">
+    Recent submissions will appear here
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

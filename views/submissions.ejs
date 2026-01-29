@@ -1,0 +1,40 @@
+<%- include('partials/head', { title: 'Submissions' }) %>
+<%- include('partials/sidebar') %>
+<%- include('partials/topbar', { title: 'Submissions' }) %>
+
+<div class="ml-64 mt-16 p-10">
+
+  <div class="bg-card p-6 rounded-xl">
+    <h2 class="text-xl mb-6">Your Submissions</h2>
+
+    <table class="w-full text-left">
+      <thead class="text-gray-400 border-b border-white/10">
+        <tr>
+          <th class="pb-3">Title</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody class="text-gray-300">
+        <tr class="border-b border-white/10">
+          <td class="py-4">Fitness App</td>
+          <td class="text-yellow-400">Pending</td>
+          <td>Jan 28</td>
+          <td><a class="text-accent" href="#">View</a></td>
+        </tr>
+        <tr class="border-b border-white/10">
+          <td class="py-4">AI Bot</td>
+          <td class="text-green-400">Approved</td>
+          <td>Jan 25</td>
+          <td><a class="text-accent" href="#">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

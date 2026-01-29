@@ -1,0 +1,31 @@
+<%- include('partials/head', { title: 'New Submission' }) %>
+<%- include('partials/sidebar') %>
+<%- include('partials/topbar', { title: 'New Submission' }) %>
+
+<div class="ml-64 mt-16 p-10 max-w-3xl">
+
+  <div class="bg-card p-8 rounded-xl">
+    <h1 class="text-2xl mb-6">Create Submission</h1>
+
+    <form method="POST" action="/submit">
+
+      <div class="mb-4">
+        <label class="text-gray-400 text-sm">Title</label>
+        <input class="w-full mt-2 p-3 bg-bg border border-white/10 rounded" placeholder="Project title" name="title">
+      </div>
+
+      <div class="mb-4">
+        <label class="text-gray-400 text-sm">Description</label>
+        <textarea class="w-full mt-2 p-3 bg-bg border border-white/10 rounded h-32" placeholder="Explain your work..." name="description"></textarea>
+      </div>
+
+      
+
+      <button class="bg-accent px-6 py-3 rounded">Submit</button>
+    </form>
+
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>

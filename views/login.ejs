@@ -1,0 +1,35 @@
+<%- include('partials/head', { title: 'Login' }) %>
+
+<div class="min-h-screen flex items-center justify-center">
+  <div class="bg-card p-8 rounded-xl w-96 shadow-xl">
+    <h1 class="text-2xl mb-6 text-accent">Login</h1>
+
+    <form method="POST" action="/login">
+      <input 
+        name="email"
+        type="email"
+        class="w-full p-3 mb-4 bg-bg border border-white/10 rounded"
+        placeholder="Email"
+        required
+      />
+
+      <input 
+        name="password"
+        type="password"
+        class="w-full p-3 mb-4 bg-bg border border-white/10 rounded"
+        placeholder="Password"
+        required
+      />
+
+      <button class="w-full bg-accent p-3 rounded">
+        Login
+      </button>
+    </form>
+
+    <p class="mt-4 text-sm text-gray-400">
+      No account? <a href="/register" class="text-accent">Register</a>
+    </p>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
