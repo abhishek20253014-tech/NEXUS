@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title><%= title %></title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
     tailwind.config = {
@@ -12,12 +21,158 @@
           colors: {
             bg: "#0b0f19",
             card: "#111827",
-            accent: "#6366f1"
+            accent: "#6366f1",
+            neon: "#22d3ee"
           }
         }
       }
     }
   </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .glass {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .glow {
+      box-shadow: 0 0 40px rgba(99,102,241,.25);
+    }
+
+    a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring {
+  transform: scale(1.5);
+  border-color: #6366f1;
+}
+
+
+    /* Hide default cursor */
+body {
+  cursor: none;
+}
+
+/* Custom dot */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Glow ring */
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #22d3ee;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  transition: 0.1s ease-out;
+}
+
+#glitter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+body {
+  position: relative;
+  z-index: 1;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+  </style>
+<script>
+  document.addEventListener("mousemove", e => {
+    document.querySelector(".cursor-dot").style.transform =
+      `translate(${e.clientX}px, ${e.clientY}px)`;
+
+    document.querySelector(".cursor-ring").style.transform =
+      `translate(${e.clientX - 16}px, ${e.clientY - 16}px)`;
+  });
+</script>
+<script>
+const canvas = document.getElementById("glitter");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+let particles = [];
+
+document.addEventListener("mousemove", e => {
+  const el = document.elementFromPoint(e.clientX, e.clientY);
+  if (["INPUT", "TEXTAREA", "BUTTON"].includes(el.tagName)) return;
+
+  for (let i = 0; i < 5; i++) {
+    particles.push({
+      x: e.clientX,
+      y: e.clientY,
+      vx: (Math.random() - 0.5) * 2,
+      vy: (Math.random() - 0.5) * 2,
+      size: Math.random() * 3 + 1,
+      life: 50
+    });
+  }
+});
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach((p, i) => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.life--;
+
+    ctx.fillStyle = `rgba(99,102,241,${p.life / 50})`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+
+    if (p.life <= 0) particles.splice(i, 1);
+  });
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+
 </head>
 
-<body class="bg-bg text-white">
+<body class="bg-bg text-white" onload="AOS.init()">
+
+  <div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<canvas id="glitter"></canvas>
+
+

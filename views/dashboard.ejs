@@ -2,16 +2,51 @@
 <%- include('partials/sidebar') %>
 <%- include('partials/topbar', { title: 'Dashboard' }) %>
 
-<div class="ml-64 mt-16 p-10">
+<div class="ml-64 mt-16 p-10 space-y-10">
 
-  <div class="grid grid-cols-3 gap-6 mb-10">
-    <div class="bg-card p-6 rounded-xl">Submissions<br><span class="text-3xl">24</span></div>
-    <div class="bg-card p-6 rounded-xl">Pending<br><span class="text-3xl">8</span></div>
-    <div class="bg-card p-6 rounded-xl">Approved<br><span class="text-3xl">16</span></div>
+  <!-- Stats -->
+  <div class="grid grid-cols-3 gap-6">
+    
+    <div class="glass p-6 rounded-xl glow transition hover:scale-[1.02]" data-aos="fade-up">
+      <p class="text-gray-400 text-sm">Total Submissions</p>
+      <h1 class="text-4xl font-bold mt-2">24</h1>
+    </div>
+
+    <div class="glass p-6 rounded-xl transition hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="100">
+      <p class="text-gray-400 text-sm">Pending Review</p>
+      <h1 class="text-4xl font-bold text-yellow-400 mt-2">8</h1>
+    </div>
+
+    <div class="glass p-6 rounded-xl transition hover:scale-[1.02]" data-aos="fade-up" data-aos-delay="200">
+      <p class="text-gray-400 text-sm">Approved</p>
+      <h1 class="text-4xl font-bold text-green-400 mt-2">16</h1>
+    </div>
+
   </div>
 
-  <div class="bg-card p-6 rounded-xl">
-    Recent submissions will appear here
+  <!-- Recent -->
+  <div class="glass p-6 rounded-xl" data-aos="fade-up">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-lg font-semibold">Recent Submissions</h2>
+      <a href="/submissions" class="text-accent text-sm hover:underline">View all</a>
+    </div>
+
+    <div class="space-y-4 text-gray-300">
+      <div class="flex justify-between border-b border-white/10 pb-3">
+        <span>Fitness App</span>
+        <span class="text-yellow-400">Pending</span>
+      </div>
+
+      <div class="flex justify-between border-b border-white/10 pb-3">
+        <span>AI Assistant</span>
+        <span class="text-green-400">Approved</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span>Portfolio Website</span>
+        <span class="text-green-400">Approved</span>
+      </div>
+    </div>
   </div>
 
 </div>

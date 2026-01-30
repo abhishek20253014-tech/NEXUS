@@ -2,27 +2,57 @@
 <%- include('partials/sidebar') %>
 <%- include('partials/topbar', { title: 'Profile' }) %>
 
-<div class="ml-64 mt-16 p-10 max-w-xl">
+<div class="ml-64 mt-16 p-10 max-w-2xl">
 
-  <div class="bg-card p-8 rounded-xl">
-    <h2 class="text-xl mb-6">Account</h2>
+  <div class="glass p-10 rounded-2xl glow" data-aos="fade-up">
 
-    <div class="mb-4">
-      <p class="text-gray-400 text-sm">Name</p>
-      <p class="text-lg">Shresth</p>
+    <!-- Header -->
+    <div class="flex items-center gap-6 mb-10">
+      <div class="w-16 h-16 bg-accent glow rounded-full"></div>
+      <div>
+        <h2 class="text-2xl font-semibold">Shresth</h2>
+        <p class="text-gray-400 text-sm">user@example.com</p>
+      </div>
     </div>
 
-    <div class="mb-4">
-      <p class="text-gray-400 text-sm">Email</p>
-      <p class="text-lg">user@example.com</p>
+    <!-- Info -->
+    <div class="grid grid-cols-2 gap-6 mb-10">
+
+      <div>
+        <p class="text-sm text-gray-400">Account Type</p>
+        <p class="text-lg">Standard</p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-400">Status</p>
+        <p class="text-lg text-green-400">Active</p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-400">Joined</p>
+        <p class="text-lg">Jan 2026</p>
+      </div>
+
+      <div>
+        <p class="text-sm text-gray-400">Plan</p>
+        <p class="text-lg">Free Tier</p>
+      </div>
+
     </div>
 
-    <div class="mt-8">
-      <button class="bg-accent px-6 py-3 rounded mr-4">Change Password</button>
-      <a href="/login" class="text-red-400">Logout</a>
+    <!-- Actions -->
+    <div class="flex gap-6">
+      <button class="bg-accent glow px-8 py-3 rounded-lg transition hover:scale-105">
+        Change Password
+      </button>
+
+      <a href="/login" class="text-red-400 flex items-center hover:underline">
+        Logout
+      </a>
     </div>
+
   </div>
 
-</div>
+</div>c
 
 <%- include('partials/footer') %>

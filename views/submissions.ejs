@@ -2,34 +2,57 @@
 <%- include('partials/sidebar') %>
 <%- include('partials/topbar', { title: 'Submissions' }) %>
 
-<div class="ml-64 mt-16 p-10">
+<div class="ml-64 mt-16 p-10 space-y-8">
 
-  <div class="bg-card p-6 rounded-xl">
-    <h2 class="text-xl mb-6">Your Submissions</h2>
+  <!-- Header -->
+  <div class="flex justify-between items-center">
+    <h1 class="text-2xl font-semibold">Submissions</h1>
+    <a href="/form" class="bg-accent glow px-6 py-3 rounded-lg transition hover:scale-105">
+      + New
+    </a>
+  </div>
+
+  <!-- Table -->
+  <div class="glass rounded-xl overflow-hidden" data-aos="fade-up">
 
     <table class="w-full text-left">
-      <thead class="text-gray-400 border-b border-white/10">
+      <thead class="bg-white/5 text-gray-400 text-sm">
         <tr>
-          <th class="pb-3">Title</th>
+          <th class="p-4">Project</th>
           <th>Status</th>
           <th>Date</th>
           <th></th>
         </tr>
       </thead>
 
-      <tbody class="text-gray-300">
-        <tr class="border-b border-white/10">
-          <td class="py-4">Fitness App</td>
-          <td class="text-yellow-400">Pending</td>
+      <tbody class="text-gray-300 divide-y divide-white/10">
+
+        <tr class="hover:bg-white/5 transition">
+          <td class="p-4">Fitness App</td>
+          <td>
+            <span class="px-3 py-1 rounded-full text-xs bg-yellow-400/10 text-yellow-400">
+              Pending
+            </span>
+          </td>
           <td>Jan 28</td>
-          <td><a class="text-accent" href="#">View</a></td>
+          <td>
+            <a href="#" class="text-accent hover:underline">View</a>
+          </td>
         </tr>
-        <tr class="border-b border-white/10">
-          <td class="py-4">AI Bot</td>
-          <td class="text-green-400">Approved</td>
+
+        <tr class="hover:bg-white/5 transition">
+          <td class="p-4">AI Bot</td>
+          <td>
+            <span class="px-3 py-1 rounded-full text-xs bg-green-400/10 text-green-400">
+              Approved
+            </span>
+          </td>
           <td>Jan 25</td>
-          <td><a class="text-accent" href="#">View</a></td>
+          <td>
+            <a href="#" class="text-accent hover:underline">View</a>
+          </td>
         </tr>
+
       </tbody>
     </table>
 

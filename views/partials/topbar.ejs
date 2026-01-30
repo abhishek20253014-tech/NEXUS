@@ -1,4 +1,28 @@
-<div class="ml-64 h-16 flex items-center justify-between px-10 bg-card border-b border-white/10">
-  <h2 class="text-xl font-semibold"><%= title %></h2>
-  <div class="text-gray-400">Welcome</div>
+<div class="ml-64 h-16 flex items-center justify-between px-10 glass border-b border-white/10">
+
+  <!-- Page Title -->
+  <div class="flex items-center gap-3">
+    <div class="w-2 h-6 bg-accent glow rounded-full"></div>
+    <h2 class="text-lg font-semibold tracking-wide"><%= title %></h2>
+  </div>
+
+  <!-- Right controls -->
+  <div class="flex items-center gap-6">
+
+    <!-- Search -->
+    <div class="hidden md:flex items-center bg-bg px-4 py-2 rounded-lg border border-white/10">
+      <input
+        class="bg-transparent outline-none text-sm text-gray-300 w-40"
+        placeholder="Search..."
+      />
+    </div>
+
+    <!-- User -->
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-accent glow"></div>
+      <span class="text-sm text-gray-300">Welcome</span>
+    </div>
+
+  </div>
+
 </div>

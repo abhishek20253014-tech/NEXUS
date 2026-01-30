@@ -1,11 +1,21 @@
-<nav class="w-full h-16 bg-gray-800 flex items-center justify-between px-8">
-  <div class="text-xl font-bold text-indigo-400">NEXUS</div>
+<nav class="w-full h-16 flex items-center justify-between px-8 glass border-b border-white/10">
 
-  <div class="flex gap-6 text-gray-300">
-    <a href="/dashboard" class="hover:text-white">Dashboard</a>
-    <a href="/form" class="hover:text-white">Form</a>
-    <a href="/submissions" class="hover:text-white">Submissions</a>
-    <a href="/profile" class="hover:text-white">Profile</a>
-    <a href="/login" class="text-red-400">Logout</a>
+  <!-- Logo -->
+  <div class="flex items-center gap-3">
+    <div class="w-8 h-8 bg-accent glow rounded-lg"></div>
+    <span class="text-xl font-bold tracking-wide text-white">NEXUS</span>
   </div>
+
+  <!-- Links -->
+  <div class="flex items-center gap-8 text-gray-400 text-sm">
+    <a href="/dashboard" class="hover:text-white transition">Dashboard</a>
+    <a href="/form" class="hover:text-white transition">New</a>
+    <a href="/submissions" class="hover:text-white transition">Submissions</a>
+    <a href="/profile" class="hover:text-white transition">Profile</a>
+
+    <div class="h-6 w-px bg-white/10"></div>
+
+    <a href="/login" class="text-red-400 hover:text-red-300 transition">Logout</a>
+  </div>
+
 </nav>
