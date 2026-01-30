@@ -1,40 +1,58 @@
 <%- include('partials/head', { title: 'Submissions' }) %>
-<%- include('partials/sidebar') %>
-<%- include('partials/topbar', { title: 'Submissions' }) %>
+  <%- include('partials/sidebar', { title: 'Submissions' }) %>
+    <%- include('partials/topbar', { title: 'Submissions' }) %>
 
-<div class="ml-64 mt-16 p-10">
+      <div class="ml-64 p-10 min-h-[calc(100vh-80px)]">
+        <div class="glass-card rounded-2xl overflow-hidden">
+          <div class="p-8 border-b border-white/5">
+            <h2 class="text-2xl font-bold">Your Submissions</h2>
+            <p class="text-gray-400 mt-1">Manage and track your project reviews</p>
+          </div>
 
-  <div class="bg-card p-6 rounded-xl">
-    <h2 class="text-xl mb-6">Your Submissions</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead class="text-gray-400 text-xs font-bold uppercase tracking-wider bg-white/5">
+                <tr>
+                  <th class="px-8 py-4">Title</th>
+                  <th class="px-8 py-4">Status</th>
+                  <th class="px-8 py-4">Date</th>
+                  <th class="px-8 py-4 text-right">Action</th>
+                </tr>
+              </thead>
 
-    <table class="w-full text-left">
-      <thead class="text-gray-400 border-b border-white/10">
-        <tr>
-          <th class="pb-3">Title</th>
-          <th>Status</th>
-          <th>Date</th>
-          <th></th>
-        </tr>
-      </thead>
+              <tbody class="text-gray-300 divide-y divide-white/5">
+                <tr class="hover:bg-white/[0.02] transition-colors group">
+                  <td class="px-8 py-5">
+                    <div class="font-semibold text-white group-hover:text-accent transition-colors">Fitness App</div>
+                    <div class="text-[10px] text-gray-500 mt-0.5">Mobile Application</div>
+                  </td>
+                  <td class="px-8 py-5">
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-orange-500/10 text-orange-500 text-xs font-bold">Pending</span>
+                  </td>
+                  <td class="px-8 py-5 text-sm text-gray-500">Jan 28, 2024</td>
+                  <td class="px-8 py-5 text-right">
+                    <a class="text-accent hover:underline font-medium text-sm" href="#">View Details</a>
+                  </td>
+                </tr>
+                <tr class="hover:bg-white/[0.02] transition-colors group">
+                  <td class="px-8 py-5">
+                    <div class="font-semibold text-white group-hover:text-accent transition-colors">AI Bot</div>
+                    <div class="text-[10px] text-gray-500 mt-0.5">Machine Learning</div>
+                  </td>
+                  <td class="px-8 py-5">
+                    <span
+                      class="px-2.5 py-1 rounded-lg bg-secondary/10 text-secondary text-xs font-bold">Approved</span>
+                  </td>
+                  <td class="px-8 py-5 text-sm text-gray-500">Jan 25, 2024</td>
+                  <td class="px-8 py-5 text-right">
+                    <a class="text-accent hover:underline font-medium text-sm" href="#">View Details</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
-      <tbody class="text-gray-300">
-        <tr class="border-b border-white/10">
-          <td class="py-4">Fitness App</td>
-          <td class="text-yellow-400">Pending</td>
-          <td>Jan 28</td>
-          <td><a class="text-accent" href="#">View</a></td>
-        </tr>
-        <tr class="border-b border-white/10">
-          <td class="py-4">AI Bot</td>
-          <td class="text-green-400">Approved</td>
-          <td>Jan 25</td>
-          <td><a class="text-accent" href="#">View</a></td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-
-</div>
-
-<%- include('partials/footer') %>
+      <%- include('partials/footer') %>

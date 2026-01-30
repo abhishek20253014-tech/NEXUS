@@ -1,38 +1,48 @@
 <%- include('partials/head', { title: 'Register' }) %>
 
-<div class="min-h-screen flex items-center justify-center">
-  <div class="bg-card p-8 rounded-xl w-96 shadow-xl">
-    <h1 class="text-2xl mb-6 text-accent">Create Account</h1>
+  <div class="min-h-screen flex items-center justify-center p-6 mesh-gradient">
+    <div class="glass-card p-10 rounded-2xl w-full max-w-md transform hover:scale-[1.01] transition-all duration-300">
+      <div class="mb-8 text-center">
+        <h1 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent to-accent-light">Join
+          NEXUS</h1>
+        <p class="text-gray-400 mt-2">Create your account to get started</p>
+      </div>
 
-    <form method="POST" action="/register">
+      <form method="POST" action="/register" class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-gray-400 mb-1.5 ml-1">Username</label>
+          <input name="username" type="text"
+            class="w-full p-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:bg-white/10 transition-all font-mono"
+            placeholder="shresth_01" required />
+        </div>
 
-      <input
-        name="email"
-        type="email"
-        class="w-full p-3 mb-4 bg-bg border border-white/10 rounded"
-        placeholder="Email"
-        required
-      />
+        <div>
+          <label class="block text-sm font-medium text-gray-400 mb-1.5 ml-1">Email Address</label>
+          <input name="email" type="email"
+            class="w-full p-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:bg-white/10 transition-all"
+            placeholder="name@example.com" required />
+        </div>
 
-      <input
-        name="password"
-        type="password"
-        class="w-full p-3 mb-4 bg-bg border border-white/10 rounded"
-        placeholder="Password"
-        required
-      />
+        <div>
+          <label class="block text-sm font-medium text-gray-400 mb-1.5 ml-1">Password</label>
+          <input name="password" type="password"
+            class="w-full p-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:bg-white/10 transition-all"
+            placeholder="••••••••" required />
+        </div>
 
-      <button class="w-full bg-accent p-3 rounded">
-        Register
-      </button>
+        <button
+          class="w-full bg-gradient-to-r from-accent to-accent-hover hover:to-accent text-white font-semibold p-3.5 rounded-xl shadow-lg shadow-accent/20 active:scale-[0.98] transition-all duration-200 mt-4">
+          Create Account
+        </button>
+      </form>
 
-    </form>
-
-    <p class="mt-4 text-sm text-gray-400">
-      Already have an account?
-      <a href="/login" class="text-accent">Login</a>
-    </p>
+      <div class="mt-8 pt-6 border-t border-white/5 text-center">
+        <p class="text-sm text-gray-400">
+          Already have an account?
+          <a href="/login" class="text-accent hover:text-accent-light font-medium transition-colors">Sign in</a>
+        </p>
+      </div>
+    </div>
   </div>
-</div>
 
-<%- include('partials/footer') %>
+  <%- include('partials/footer') %>

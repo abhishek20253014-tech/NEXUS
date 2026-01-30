@@ -1,4 +1,49 @@
-<div class="ml-64 h-16 flex items-center justify-between px-10 bg-card border-b border-white/10">
-  <h2 class="text-xl font-semibold"><%= title %></h2>
-  <div class="text-gray-400">Welcome</div>
+<div class="ml-64 h-20 flex items-center justify-between px-10 glass border-b border-white/5 sticky top-0 z-40">
+  <div>
+    <h2 class="text-xl font-bold tracking-tight">
+      <%= title %>
+    </h2>
+    <p class="text-xs text-gray-500 mt-0.5">Welcome back, <%= user.username %>
+    </p>
+  </div>
+
+  <div class="flex items-center gap-4">
+    <button
+      class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+      </svg>
+    </button>
+    <div class="h-8 w-[1px] bg-white/10 mx-2"></div>
+    <div class="flex items-center gap-3">
+      <div class="flex flex-col items-end">
+        <span class="text-sm font-semibold truncate max-w-[150px]">
+          <%= user.username %>
+        </span>
+        <span class="text-[10px] text-accent font-bold uppercase tracking-wider">Pro Plan</span>
+      </div>
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-accent-light p-[1px]">
+        <div
+          class="w-full h-full rounded-xl bg-card flex items-center justify-center font-bold text-accent overflow-hidden">
+          <% if (user.photo) { %>
+            <img src="<%= user.photo %>" alt="<%= user.username %>" class="w-full h-full object-cover rounded-xl">
+            <% } else { %>
+              <%= user.username.substring(0, 2).toUpperCase() %>
+                <% } %>
+        </div>
+      </div>
+      <a href="/logout"
+        class="ml-2 w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 hover:bg-red-500/10 text-gray-400 hover:text-red-500 transition-colors"
+        title="Logout">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </a>
+    </div>
+  </div>
 </div>

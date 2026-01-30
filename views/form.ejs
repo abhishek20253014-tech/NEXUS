@@ -1,31 +1,43 @@
 <%- include('partials/head', { title: 'New Submission' }) %>
-<%- include('partials/sidebar') %>
-<%- include('partials/topbar', { title: 'New Submission' }) %>
+  <%- include('partials/sidebar', { title: 'New Submission' }) %>
+    <%- include('partials/topbar', { title: 'New Submission' }) %>
 
-<div class="ml-64 mt-16 p-10 max-w-3xl">
+      <div class="ml-64 p-10 min-h-[calc(100vh-80px)]">
+        <div class="max-w-3xl">
+          <div class="glass-card p-10 rounded-2xl">
+            <div class="mb-8">
+              <h1 class="text-3xl font-bold">Create Submission</h1>
+              <p class="text-gray-400 mt-2">Fill out the form below to submit your project for review.</p>
+            </div>
 
-  <div class="bg-card p-8 rounded-xl">
-    <h1 class="text-2xl mb-6">Create Submission</h1>
+            <form method="POST" action="/submit" class="space-y-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-2 ml-1">Project Title</label>
+                <input
+                  class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:bg-white/10 transition-all"
+                  placeholder="Enter project name..." name="title" required>
+              </div>
 
-    <form method="POST" action="/submit">
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-2 ml-1">Description</label>
+                <textarea
+                  class="w-full p-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/20 focus:bg-white/10 transition-all h-40 resize-none"
+                  placeholder="Describe your work, tech stack, and goals..." name="description" required></textarea>
+              </div>
 
-      <div class="mb-4">
-        <label class="text-gray-400 text-sm">Title</label>
-        <input class="w-full mt-2 p-3 bg-bg border border-white/10 rounded" placeholder="Project title" name="title">
+              <div class="pt-4 flex items-center gap-4">
+                <button
+                  class="px-8 py-3.5 bg-gradient-to-r from-accent to-accent-hover text-white font-semibold rounded-xl shadow-lg shadow-accent/20 active:scale-[0.98] transition-all">
+                  Submit Project
+                </button>
+                <a href="/dashboard"
+                  class="px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-xl transition-all">
+                  Cancel
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
 
-      <div class="mb-4">
-        <label class="text-gray-400 text-sm">Description</label>
-        <textarea class="w-full mt-2 p-3 bg-bg border border-white/10 rounded h-32" placeholder="Explain your work..." name="description"></textarea>
-      </div>
-
-      
-
-      <button class="bg-accent px-6 py-3 rounded">Submit</button>
-    </form>
-
-  </div>
-
-</div>
-
-<%- include('partials/footer') %>
+      <%- include('partials/footer') %>
